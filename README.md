@@ -33,6 +33,22 @@ Instructions:
 1. Click on the individual device(s) you want to stream, or don't click to stream all.
 1. Click on "Stream Devices" to start the LSL Outlets.
 
+
+
+### Non-interactive configuration
+
+You can configure startup behavior with command-line flags and/or environment variables.
+
+* Config file: `-c, --config <config>`
+* Sampling rate: `--sampling-rate <hz>` or `OPENVR_SAMPLING_RATE`
+* Origin style: `--origin seated|standing|raw` (or `0|1|2`) or `OPENVR_ORIGIN_STYLE`
+* Stream devices: `--devices all|<comma-separated-indices>` or `OPENVR_STREAM_DEVICES`
+* Auto scan: `--auto-scan` or `OPENVR_AUTO_SCAN=1`
+* Auto start streams after first scan: `--auto-start` or `OPENVR_AUTO_START=1`
+* Write effective settings to config file: `--write-config <config>` or `OPENVR_CONFIG_OUT`
+
+Precedence is: command line > environment variables > loaded config file > UI defaults.
+
 ### Data format
 
 * One stream will be started for all devices' pose data. Each device gets 12 channels, corresponding to the 12 cells in a 3x4 transformation matrix.
